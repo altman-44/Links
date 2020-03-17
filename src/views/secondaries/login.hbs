@@ -1,6 +1,7 @@
 <style>
    
-    body{background: #16a085;font-family: sans-serif;
+    body{
+        background: #16a085;font-family: sans-serif;
     }
     .input-login{
         border:2px solid #3498db;
@@ -10,8 +11,7 @@
         text-align: center;
         padding: 14px 10px;
         width: 200px;
-        outline: none;
-        float: left;
+        outline: none;        
         color: white;
         border-radius: 25px;
         transition: 0.25s;
@@ -26,10 +26,8 @@
         background:none;
         display: block;
         margin:20px auto;
-        text-align: center;
         padding: 14px 40px;
         outline: none;
-        float: left;
         color: white;
         border-radius: 25px;
         transition: 0.25s;
@@ -41,20 +39,18 @@
     }
 </style>
 <div class="d-flex justify-content-center container mt-5 text-white" style=" text-aling:center; background-color:#34495e; transform:translate(-50%, -50%) width:200px;border-style:double;border-width: 5px;">
-    <form action="/home" method="POST">
-
+    <form action="/home" method="POST" class="text-center">
         <div class="text-center" style="border-bottom: 4px solid; width:100%; ">
             <label><h2>Login</h2></label><br>
         </div>
-        <div class="form-group p-4 text-center" >
+        <div class="form-group text-center" >
             <input id="username" type="text" name="username" class="input-login" placeholder="usuario">
         </div>
-        <div class="form-group p-4 text-center" >
+        <div class="form-group text-center" >
             <input id="password" type="password" name="password" class="input-login" placeholder="contraseña">
         </div>
         <div class="form-group p-4 text-center">
             <input id="btn-login" type="button" value="LISTO!" class="btn btn-primary">
         </div>
-
     </form>
 </div>

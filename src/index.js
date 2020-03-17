@@ -25,6 +25,7 @@ app.use(express.json());
 app.use(require('./routes'));
 
 //Public
+console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Listening the server
