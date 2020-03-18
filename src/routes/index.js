@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const session = require('express-session');
 
-session.users = require('./database/trucha');
+const app = express();
+
+session.users = require('../database/trucha');
 
 app.use(session({
     secret: "123",
@@ -20,16 +22,18 @@ router.post('/login', (req, res) => {
     let index;
 
     for(i = 0; i < session.users.length; i++){
-        if(req.body.username == session.users[i].username){
+        console.log(session.users[i]);
+        if(req.body.username == session.users[i].username && req.body.pwd == session.users[i].pwd){
+            console.log("existe");
             session.username = req.body.username;
             user_exists = true;
             index = i;
         }
     }
     if (user_exists){
-        res.render('/home', {fullname: session.data[i].fullname});
+        res.render('secondaries/home', {fullname: session.users[index].fullname});
     }else{
-        res.render('/login', {userNoExist = true});
+        res.render('secondaries/login', {userNoExist: true});
     }
 });
 
