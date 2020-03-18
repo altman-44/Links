@@ -38,20 +38,24 @@
         
     }
 </style>
+{{#if userNoExist}}
+    <div class="alert alert-danger">
+        The user required does not exist
+    </div>
+{{/if}}
 <div class="d-flex justify-content-center container mt-5 text-white" style=" text-aling:center; background-color:#34495e; transform:translate(-50%, -50%) width:200px;border-style:double;border-width: 5px;">
-    <form action="/home" method="POST" class="text-center">
-        <div class="text-center" style="border-bottom: 4px solid; width:100%;  ">
-
+    <form action="/login" method="POST" class="text-center">
+        <div class="text-center" style="border-bottom: 4px solid; width:100%;">
             <label><h2>Login</h2></label><br>
         </div>
         <div class="form-group text-center" >
             <input id="username" type="text" name="username" class="input-login" placeholder="usuario">
         </div>
         <div class="form-group text-center" >
-            <input id="password" type="password" name="password" class="input-login" placeholder="contraseña">
+            <input id="password" type="password" name="pwd" class="input-login" placeholder="contraseña">
         </div>
         <div class="form-group p-4 text-center">
-            <input id="btn-login" type="button" value="LISTO!" class="btn btn-primary">
+            <input id="btn-login" type="submit" value="LISTO!" class="btn btn-primary">
         </div>
     </form>
 </div>
