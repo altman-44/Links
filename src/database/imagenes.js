@@ -27,20 +27,26 @@ module.exports = [
     },
     {
         id: 5,
-        genre: ['trending', 'love'],
+        genre: ['trending', 'love', 'drama'],
         year: '2012',
         imgFile: '3metrosSobreElCielo.jpg'
     },
     {
         id: 6,
-        genre: ['trending', 'drama', 'love'],
+        genre: ['popular', 'drama', 'love'],
         year: '2016',
         imgFile: 'titanic.jpg'
     },
     {
         id: 7,
-        genre: ['trending', ''],
+        genre: ['trending', 'suspense'],
         year: '2009',
         imgFile: 'contratiempo.jpg'
+    },
+    {
+        id: 8,
+        genre: ['trending', 'suspense', 'action'],
+        year: '2019',
+        imgFile: 'batmanElCaballero.jpg'
     }
 ];

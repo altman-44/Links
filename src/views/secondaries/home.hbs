@@ -10,13 +10,11 @@
     .img-peliculas{
         width:350px;
         height:200px;
-        margin-top: 25px;
         border: 2px solid;
         transition: 0.25s;
         cursor:pointer;
         background-color: transparent;
         border-color: white;
-        
     }
     .img-peliculas:hover{
        border-color: #2ecc71;
@@ -27,8 +25,8 @@
         border-color: #2ecc71;
     }
     .contenedor_peliculas{
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
+        margin-bottom: 30px;
         width: 350px;
         height: 100%;
         background-color: rgba(137, 43, 226, 0);
@@ -39,30 +37,44 @@
     
 </form>
 
+<button id="btnAceptar">
+    Aceptar
+</button>
 
-<div class="col">
-    <i id="spinner" class="spin" style="visibility:hide"></i>
-    <div id="div_films">
-        <div id="div_trending">
-            <div class="container text-white" style="background-color:rgba(0, 0, 255, 0);margin-top:1%;">
-                <h3>En tendencia</h3>
+<div class="container">
+    <div class="col">
+        <div id="div_films">
+            {{!--
+            <div id="div_trending">
+                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0);margin-top:1%;">
+                    <h3>En tendencia</h3>
+                </div>
             </div>
-        </div>
-        <hr class="hr">
-        <div id="div_popular">
-            <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                <h3>Más populares</h3>
+            <hr class="hr">
+            <div id="div_popular">
+                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
+                    <h3>Más populares</h3>
+                </div>
             </div>
-        </div>
-        <div id="div_comedy">
-            <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                <h3>Comedia</h3>
+            <hr class="hr">
+            <div id="div_comedy">
+                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
+                    <h3>Comedia</h3>
+                </div>
             </div>
-        </div>
-        <div id="div_action">
-            <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                <h3>Acción</h3>
+            <hr class="hr">
+            <div id="div_action">
+                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
+                    <h3>Acción</h3>
+                </div>
             </div>
+            <hr class="hr">
+            <div id="div_suspense">
+                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
+                    <h3>Suspenso</h3>
+                </div>
+            </div>
+            --}}
         </div>
     </div>
 </div>

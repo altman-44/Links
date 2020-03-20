@@ -17,6 +17,10 @@ router.get('/', (req, res) => {
     res.render('secondaries/login');
 });
 
+router.get('/home', (req, res) => {
+    res.render('secondaries/home', {mostrarHeader: true});
+})
+
 router.post('/login', (req, res) => {
     console.log(req.body);
     let user_exists = false;
