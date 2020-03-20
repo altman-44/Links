@@ -1,4 +1,2 @@
 # Links
-Creando un repositorio con Chero
-
-Vamos a ir probando cómo unir conflictos y demás.
+Creando una página en la que los usuarios podrán guardar sus películas favoritas y demás funciones de almacenamiento
