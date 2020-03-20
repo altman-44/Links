@@ -12,3 +12,12 @@
 .flecha:hover{
     cursor: pointer;
 }
+.row_films{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border: none;
+    border-top: 10px;
+    border-color: rgb(255, 255, 255);
+    padding: 2%;
+}

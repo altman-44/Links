@@ -6,10 +6,16 @@ const imagenes = require('../database/imagenes.js');
 router.post('/imagenes', (req, res) => {
     console.log(req.body);
     let imagenesAEnviar = [];
+
     imagenes.forEach((imagen, i) => {
-        if(imagen.genre[i] == req.body.type){
-            console.log(i);
-            imagenesAEnviar[imagenesAEnviar.length] = imagen;
+        console.log(i);
+        console.log(imagen.genre[i]);
+
+        for(k = 0; k < imagen.genre.length; k++){
+            if(imagen.genre[k] == req.body.type){
+                console.log(i, " ", k);
+                imagenesAEnviar[imagenesAEnviar.length] = imagen;
+            }
         }
     });
     res.send(imagenesAEnviar);

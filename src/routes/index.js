@@ -38,10 +38,4 @@ router.post('/login', (req, res) => {
     }
 });
 
-router.post('/prueba', (req, res) => {
-    res.send(session.users);
-});
-
-
-
 module.exports = router;
