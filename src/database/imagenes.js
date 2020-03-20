@@ -3,50 +3,58 @@ const path = require('path');
 module.exports = [
     {
         id: 1,
+        name: 'Avengers',
         genre: ['trending', 'action'],
-        year: '2019',
+        dateRelease: '2019',
         imgFile: 'avengers.jpg'
     },
     {
         id: 2,
+        name: 'Spiderman - Far From Home',
         genre: ['trending', 'action'],
-        year: '2019',
+        dateRelease: '2019',
         imgFile: 'spiderman-farFromHome.jpeg'
     },
     {
         id: 3,
+        name: 'Toy Story 3',
         genre: ['trending', 'comedy'],
-        year: '2003',
+        dateRelease: '2003',
         imgFile: 'toyStory.jpg'
     },
     {
         id: 4,
+        name: 'Up!',
         genre: ['popular', 'comedy'],
-        year: '1998',
+        dateRelease: '1998',
         imgFile: 'up.jpg'   
     },
     {
         id: 5,
+        name: '3 metros sobre el cielo',
         genre: ['trending', 'love', 'drama'],
-        year: '2012',
+        dateRelease: '2012',
         imgFile: '3metrosSobreElCielo.jpg'
     },
     {
         id: 6,
-        genre: ['popular', 'drama', 'love'],
-        year: '2016',
+        name: 'Titanic',
+        genre: ['popular', 'drama', 'love', 'classic'],
+        dateRelease: '5 de febrero de 1998',
         imgFile: 'titanic.jpg'
     },
     {
         id: 7,
+        name: 'Contratiempo',
         genre: ['trending', 'suspense'],
-        year: '2009',
+        dateRelease: '2009',
         imgFile: 'contratiempo.jpg'
     },
     {
         id: 8,
+        name: 'Batman, el Caballero de la Noche Asciende',
         genre: ['trending', 'suspense', 'action'],
-        year: '2019',
-        imgFile: 'batmanElCaballero.jpg'
+        dateRelease: '26 de julio de 2012',
+        imgFile: 'batmanElCaballeroAsc.jpg'
     }
 ];

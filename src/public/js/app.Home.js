@@ -5,22 +5,27 @@ $(function() {
     // Para agregar secciones solo hay que llamar a crearContenedoresPeliculas(genero) enviandole el genero que se desee
     // estando éste genero en la base de datos
     crearContenedoresPeliculas('trending', 'En Tendencia');
+    crearContenedoresPeliculas('classic', 'Clásicas');
     crearContenedoresPeliculas('popular', 'Más Populares');
     crearContenedoresPeliculas('comedy', 'Comedia');
     crearContenedoresPeliculas('action', 'Acción');
     crearContenedoresPeliculas('suspense', 'Suspenso');
     crearContenedoresPeliculas('drama', 'Drama');
 
+
     $('.flecha').on('click', function(){
         alert("Flecha");
     });
 
     $('#btnAceptar').click(function(){
-        $('.img-peliculas').fadeOut('slow');
+        let success = function(info){
+            alert(info);
+        }
+        peticiones(null, 'prueba', 'GET', null, success);
     });
 });
 
-async function crearContenedoresPeliculas(type, title){
+function crearContenedoresPeliculas(type, title){
     //Variables
     let imagenes, cantFilas, cantImgsXFila = 3;
     let fila, contenedor, input, text, flechaLeft, flechaRight, counterLoadedImgs =  0;
@@ -42,83 +47,66 @@ async function crearContenedoresPeliculas(type, title){
     div_type.html('<h1 class="amatic" style="margin-bottom: 60px;">' + title + '</h1>');
 
     //Request to get the images
-    await $.ajax({
-        url: 'peliculas/imagenes',
-        method: 'POST',
-        beforeSend: function(){
-            $("#spinner").spin('show');
-        },
-        data: {
-            type
-        },
-        success: function(info){
+    let success = function(info){
 
-            $("#spinner").spin('hide');
-            imagenes = info;
+        $("#spinner").spin('hide');
+        imagenes = info;
 
-            console.log(type, " ", imagenes);
+        console.log(type, " ", imagenes);
 
-            cantFilas = imagenes.length / cantImgsXFila;
-            if(!Number.isInteger(cantFilas)){
-                cantFilas = Math.floor(cantFilas + 1);
-                console.log("Cantidad filas: ", cantFilas);
-            }
+        cantFilas = imagenes.length / cantImgsXFila;
+        if(!Number.isInteger(cantFilas)){
+            cantFilas = Math.floor(cantFilas + 1);
+            console.log("Cantidad filas: ", cantFilas);
         }
-    });
 
-    for(i = 0; i < cantFilas; i++){
+        for(i = 0; i < cantFilas; i++){
 
-        /*
-        fila = document.createElement('div');
-        fila.setAttribute('class', 'row row_films');
-        */
-       fila = $('<div>', {
-           'class': 'row row_films'
-       });
-
-        for(k = 0; k < cantImgsXFila ; k++){
-            console.log("Counter: ", counterLoadedImgs);
-
-            if(imagenes[counterLoadedImgs]){
-                /*
-                contenedor = document.createElement('div');
-                contenedor.setAttribute('class', 'contenedor_peliculas');
-                */
-                contenedor = $('<div>', {
-                    'class': 'contenedor_peliculas'
-                });
-                /*
-                img = document.createElement('img');
-                //img.value = imagenes[counterLoadedImgs].id;
-                console.log(img.value);
-                console.log("imagenes[counterLoadedImgs].id: ", imagenes[counterLoadedImgs].id);
-
-                img.setAttribute('class', 'img-peliculas rounded');
-                img.setAttribute('onclick', 'selectedImg(' + imagenes[counterLoadedImgs].id + ')');
-                img.setAttribute('alt', imagenes[counterLoadedImgs].id);
-                img.src = '/img/' + imagenes[counterLoadedImgs].imgFile;
-                */
-
-                img = $('<img>', {
-                    'class':'img-peliculas rounded',
-                    'alt': imagenes[counterLoadedImgs].id,
-                    'src': '/img/' + imagenes[counterLoadedImgs].imgFile,
-                    'onclick': 'selectedImg(' + imagenes[counterLoadedImgs].id + ')'
-                });
-
-                contenedor.append(img);
-                fila.append(contenedor);
+           fila = $('<div>', {
+               'class': 'row row_films'
+           });
     
-                counterLoadedImgs++;
+            for(k = 0; k < cantImgsXFila ; k++){
+                console.log("Counter: ", counterLoadedImgs);
+    
+                if(imagenes[counterLoadedImgs]){
+                
+                    contenedor = $('<div>', {
+                        'class': 'contenedor_peliculas'
+                    });                    
+    
+                    img = $('<img>', {
+                        'class':'img-peliculas rounded',
+                        'alt': imagenes[counterLoadedImgs].id,
+                        'src': '/img/' + imagenes[counterLoadedImgs].imgFile,
+                        'onclick': 'selectedImg(' + imagenes[counterLoadedImgs].id + ')'
+                    });
+    
+                    contenedor.append(img);
+                    fila.append(contenedor);
+        
+                    counterLoadedImgs++;
+                }
             }
+            div_type.append(fila);
         }
-        div_type.append(fila);
+    
+        $('#div_films').append(div_type);
+        document.getElementById('div_films').innerHTML += '<hr class="hr">';
     }
-
-    $('#div_films').append(div_type);
-    document.getElementById('div_films').innerHTML += '<hr class="hr">'
+    peticiones(cargando, 'peliculas/imagenes', 'POST', {type}, success);
 }
 
 function selectedImg(valor) {
     alert(valor);
+}
+
+async function peticiones(beforeSend, url, method, data, success){
+    await $.ajax({
+        beforeSend,
+        url,
+        method,
+        data,
+        success
+    });
 }
