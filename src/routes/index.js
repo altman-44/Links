@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const session = require('express-session');
+const path = require('path');
 
 const app = express();
 
@@ -31,10 +32,16 @@ router.post('/login', (req, res) => {
         }
     }
     if (user_exists){
-        res.render('secondaries/home', {fullname: session.users[index].fullname});
+        res.render('secondaries/home', {fullname: session.users[index].fullname, mostrarHeader: true});
     }else{
         res.render('secondaries/login', {userNoExist: true});
     }
 });
+
+router.post('/prueba', (req, res) => {
+    res.send(session.users);
+});
+
+
 
 module.exports = router;
