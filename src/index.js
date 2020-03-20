@@ -23,9 +23,9 @@ app.use(express.json());
 
 //Routes
 app.use(require('./routes'));
+app.use('/peliculas', require('./routes/peliculas.js'));
 
 //Public
-console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Listening the server
