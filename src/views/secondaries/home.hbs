@@ -1,7 +1,10 @@
 <style>
    
     body{
-        background:#4682B4 ;font-family: sans-serif;
+        /* background:#4682B4 ;font-family: sans-serif; */
+        background: #0f0c29;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
     /*#16a085*/
     .img-peliculas{
@@ -26,7 +29,7 @@
     .contenedor_peliculas{
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
+        width: 350px;
         height: 100%;
         background-color: rgba(137, 43, 226, 0);
     }
@@ -36,7 +39,6 @@
     
 </form>
 
-<button id="btnEnviar">Aceptar</button>
 
 <div class="col">
     <i id="spinner" class="spin" style="visibility:hide"></i>
@@ -52,8 +54,18 @@
                 <h3>Más populares</h3>
             </div>
         </div>
+        <div id="div_comedy">
+            <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
+                <h3>Comedia</h3>
+            </div>
+        </div>
+        <div id="div_action">
+            <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
+                <h3>Acción</h3>
+            </div>
+        </div>
     </div>
 </div>
 
 
-<script src="js/appHome.js"></script>
+<script src="js/app.Home.js"></script>
