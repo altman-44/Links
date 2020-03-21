@@ -1,5 +1,5 @@
 
-$(function(){
+$(function () {
 
     let card = $('.card');
     let cardHeader = $('.card-header');
@@ -24,31 +24,16 @@ $(function(){
     cardText.fadeIn(2000);
     cardText.animate({
         fontSize: '20px'
-    },1000);
+    }, 1000);
 
     aCardFooter.hide();
-    aCardFooter.fadeIn(3000, function(){
+    aCardFooter.fadeIn(2000, function(){
         aCardFooter.animate({
             left: '0px',
             opacity: '1'
-        }, 3000, function(){
-            aCardFooter.fadeIn(2000);
+        }, 2000, function(){
+            aCardFooter.fadeIn(1000);
         });
     });
-    
-
-    aCardFooter.mouseenter(function(){
-        aCardFooter.animate({
-            fontFamily: ''
-        })
-    });
-
-    aTextFooter.mouseout(function(){
-        aTextFooter.animate({
-            fontFamily: ''
-        })
-    });
-
-
     
 });

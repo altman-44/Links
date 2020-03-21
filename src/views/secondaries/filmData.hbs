@@ -35,7 +35,7 @@
         <div class="text-center">
             <img class="card-img rounded border border-danger" id="imgFilm" title="{{film.name}}" src="/img/{{film.imgFile}}">
         </div>
-        <div class="card-body text-white border border-primary mt-3 mb-3">
+        <div class="card-body text-white border border-info mt-3 mb-3">
             <div class="card-text">
                 <p>Estreno: <span class="text-info">{{film.dateRelease}}</span></p>
                 <p class="mr-3">Género: 
@@ -46,8 +46,9 @@
                     </span>
                 </p>
                 <p>Director: <span class="text-info">{{film.director}}</span></p>
+                <p>Duración: <span class="text-info">{{film.duration}}</span></p>
                 <p class="text-white border border-white p-2 border-left-0 border-right-0"><span id="textDescription">Descripción</span><br> <span class="text-justify">{{film.description}}</span></p>
-                <p>Premios: <span class="text-info">
+                <p><i class="fas fa-award"></i> Premios: <span class="text-info">
                     {{#each film.awards}}
                         {{this}}
                     {{/each}}
@@ -55,7 +56,8 @@
             </div>
         </div>
         <div class="card-footer border border-danger border-top-0 border-bottom-0 border-right-0">
-            <a href="{{film.url}}" class="text-danger" target="_blank" style="position:relative;left: 1200px;display:block;opacity:0;"><strong>Netflix</strong></a>
+            <a id="aCardFooter_1" href="{{film.urlNetflix}}" class="text-danger" target="_blank" style="position:relative;left: 1200px;display:block;opacity:0;"><strong>Netflix</strong></a>
+            <a id="aCardFooter_2" href="{{film.urlYoutube}}" class="text-white" target="_blank" style="position:relative;left: 1200px;display:block;opacity:0;"><strong>Youtube (Trailer)</strong></a>
         </div>
     </div>
 </div>

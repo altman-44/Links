@@ -2,7 +2,7 @@ module.exports = [
     {
         id: 1,
         name: 'The Avengers',
-        genre: ['science fiction', 'action', 'fantasy'],
+        genre: ['science fiction', 'action', 'superheroes'],
         dateRelease: '26 de abril de 2012',
         country: '',
         director: 'Joss Whedon',
@@ -11,21 +11,23 @@ module.exports = [
         awards: [''],
         iconSrc: {web: true, src: 'https://img.icons8.com/offices/50/000000/avengers.png'}, //el tamaño se cambia con el número ..offices/numero/000...
         imgFile: 'theAvengers.jpg',
-        url: ''
+        urlNetflix: '',
+        urlYoutube: ''
     },
     {
         id: 2,
-        name: 'Spiderman - Far From Home',
-        genre: ['trending', 'action'],
-        dateRelease: '2019',
+        name: 'Spider-Man',
+        genre: ['action', 'superheroes', 'science fiction', 'exciting'],
+        dateRelease: '15 de mayo de 2002 (Argentina)',
         country: '',
-        director: '',
-        description: '',
-        duration: '',
-        awards: [''],
-        iconSrc: '',
-        imgFile: 'spiderman-farFromHome.jpeg',
-        url: ''
+        director: 'Sam Raimi',
+        description: 'Un tímido estudiante se vuelve en un luchador contra el crimen, desde que la picadura de una araña mutante le da poderes extraordinarios.',
+        duration: '2h 1min',
+        awards: ["People's Choice a la Película Favorita"],
+        iconSrc: {},
+        imgFile: 'spiderman.jpg',
+        urlNetflix: 'https://www.netflix.com/watch/60004481?trackId=13752289&tctx=0%2C0%2Cee6ef0bfff953740d08b534bebd3b3713d579887%3Ae09a75f9b582a8dfded619f56463d40900d234b1%2C%2C',
+        urlYoutube: ''
     },
     {
         id: 3,
@@ -37,9 +39,10 @@ module.exports = [
         description: '',
         duration: '',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {},
         imgFile: 'toyStory.jpg',
-        url: ''
+        urlNetflix: '',
+        urlYoutube: ''
     },
     {
         id: 4,
@@ -51,9 +54,10 @@ module.exports = [
         description: '',
         duration: '',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {},
         imgFile: 'up.jpg',
-        url: ''   
+        urlNetflix: '',
+        urlYoutube: ''   
     },
     {
         id: 5,
@@ -65,9 +69,10 @@ module.exports = [
         description: '',
         duration: '',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {},
         imgFile: '3metrosSobreElCielo.jpg',
-        url: ''
+        urlNetflix: '',
+        urlYoutube: ''
     },
     {
         id: 6,
@@ -79,9 +84,10 @@ module.exports = [
         description: '',
         duration: '',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {},
         imgFile: 'titanic.jpg',
-        url: ''
+        urlNetflix: '',
+        urlYoutube: ''
     },
     {
         id: 7,
@@ -93,9 +99,10 @@ module.exports = [
         description: '',
         duration: '',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {},
         imgFile: 'contratiempo.jpg',
-        url: 'https://www.netflix.com/watch/80093106?trackId=13752289&tctx=0%2C0%2C2095f8ce8d0626ec7cdf0f05b9d93f094de66563%3A3aa3566af4557216e7204e85d7e2b9d61ff948a4%2C%2C'
+        urlNetflix: 'https://www.netflix.com/watch/80093106?trackId=13752289&tctx=0%2C0%2C2095f8ce8d0626ec7cdf0f05b9d93f094de66563%3A3aa3566af4557216e7204e85d7e2b9d61ff948a4%2C%2C',
+        urlYoutube: ''
     },
     {
         id: 8,
@@ -107,23 +114,25 @@ module.exports = [
         description: '',
         duration: '',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {},
         imgFile: 'batmanElCaballeroAsc.jpg',
-        url: ''
+        urlNetflix: '',
+        urlYoutube: ''
     },
     {
         id: 9,
         name: 'Thor',
-        genre: ['fantasy', 'science fiction', 'action'],
-        dateRelease: '28 de abril de 2011',
-        country: '',
+        genre: ['science fiction', 'action', 'superheroes'],
+        dateRelease: '17 de abril de 2011',
+        country: 'Estados Unidos',
         director: 'Kenneth Branagh',
         description: 'Tras desatar una antigua guerra, el codicioso guerrero Thor es desterrado a la Tierra por su padre para que viva entre los hombres y descubra así el verdadero sentido de la humildad. Allí, sin sus poderes, Thor deberá enfrentarse a las fuerzas más oscuras que su mayor enemigo le enviará desde Asgard.',
-        duration: '',
+        duration: '1h 55min',
         awards: [''],
-        iconSrc: '',
+        iconSrc: {web: true, src: 'https://img.icons8.com/material-rounded/48/000000/law.png'},
         imgFile: 'thor.jpg',
-        url: 'https://www.netflix.com/watch/70141586?trackId=13752289&tctx=1%2C1%2C4cf5b366d4f4705bfb71a19bb69ae4e12611446d%3A0c331564926727b9d5f866ebd8e77a9f01237b8e%2C%2C'
+        urlNetflix: 'https://www.netflix.com/watch/70141586?trackId=13752289&tctx=1%2C1%2C4cf5b366d4f4705bfb71a19bb69ae4e12611446d%3A0c331564926727b9d5f866ebd8e77a9f01237b8e%2C%2C',
+        urlYoutube: 'https://www.youtube.com/watch?v=JOddp-nlNvQ'
     },
     {
         id: 10,
@@ -133,10 +142,11 @@ module.exports = [
         country: '',
         director: 'Baz Luhrmann',
         description: 'Nick Carraway (Tobey Maguire), nativo del Medio Oeste, llega a Nueva York en 1922 en busca del sueño americano. Nick, un aspirante a escritor, se muda al lado del millonario Jay Gatsby (Leonardo DiCaprio) y al otro lado de la bahía de su prima Daisy (Carey Mulligan) y su esposo mujeriego, Tom (Joel Edgerton). Nick se involucra en un mundo cautivador de riqueza y -- mientras observa sus ilusiones y engaños -- escribe una historia de amor imposible, sueños y tragedia.',
-        duration: '2hs 23m',
+        duration: '2h 23m',
         awards: ['Óscar al mejor diseño de producción |', 'Óscar al mejor diseño de vestuario'],
-        iconSrc: '',
+        iconSrc: {web: true, src: 'https://img.icons8.com/material-rounded/48/000000/average-2.png'},
         imgFile: 'elGranGatsby.jpg',
-        url: 'https://www.netflix.com/watch/70244437?trackId=14170286&tctx=2%2C2%2C93c5099b-8f84-4684-a59e-8ced44539a02-57642481%2C4fd17f35-2bae-411a-9903-be44945770d4_29187538X3XX1584755874162%2C4fd17f35-2bae-411a-9903-be44945770d4_ROOT'
-    }
+        urlNetflix: 'https://www.netflix.com/watch/70244437?trackId=14170286&tctx=2%2C2%2C93c5099b-8f84-4684-a59e-8ced44539a02-57642481%2C4fd17f35-2bae-411a-9903-be44945770d4_29187538X3XX1584755874162%2C4fd17f35-2bae-411a-9903-be44945770d4_ROOT',
+        urlYoutube: 'https://www.youtube.com/watch?v=TYMMOjBUPMM'
+    },
 ];

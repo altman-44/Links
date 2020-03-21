@@ -13,6 +13,8 @@ $(function() {
     crearContenedoresPeliculas('drama', 'Drama');
     crearContenedoresPeliculas('fantasy', 'Fantasía');
     crearContenedoresPeliculas('science fiction', 'Ciencia ficción');
+    crearContenedoresPeliculas('superheroes', 'Superhéroes');
+    crearContenedoresPeliculas('exciting', 'Emocionantes');
 
     $('.flecha').on('click', function(){
         alert("Flecha");
@@ -28,6 +30,7 @@ $(function() {
 
 function crearContenedoresPeliculas(type, title){
     //Variables
+    let hayPelicula = false;
     let imagenes, cantFilas, cantImgsXFila = 3;
     let fila, contenedor, input, text, aElement, counterLoadedImgs =  0;
 
@@ -45,64 +48,66 @@ function crearContenedoresPeliculas(type, title){
         $("#spinner").spin('hide');
         imagenes = info;
 
-        console.log(type, " ", imagenes);
+        if(imagenes.length > 0){
 
-        cantFilas = imagenes.length / cantImgsXFila;
-        if(!Number.isInteger(cantFilas)){
-            cantFilas = Math.floor(cantFilas + 1);
-            console.log("Cantidad filas: ", cantFilas);
-        }
-
-        for(i = 0; i < cantFilas; i++){
-
-           fila = $('<div>', {
-               'class': 'row row_films'
-           });
-    
-            for(k = 0; k < cantImgsXFila ; k++){
-                console.log("Counter: ", counterLoadedImgs);
-    
-                if(imagenes[counterLoadedImgs]){
-                
-                    // contenedor
-                    contenedor = $('<div>', {
-                        'class': 'contenedor_peliculas'
-                    });                    
-    
-                    // a
-                    aElement = $('<a>', {
-                        'href': '/peliculas/filmData/' + imagenes[counterLoadedImgs].id
-                    });
-
-                    // img
-                    img = $('<img>', {
-                        'class':'img-peliculas rounded',
-                        'title': imagenes[counterLoadedImgs].name,
-                        'alt': imagenes[counterLoadedImgs].id,
-                        'src': '/img/' + imagenes[counterLoadedImgs].imgFile //,
-                        //'onclick': '/peliculas/showFilmData/' + imagenes[counterLoadedImgs].id
-                    });
-    
-                    aElement.append(img);
-                    contenedor.append(aElement);
-
-                    // text
-                    text = $('<h4>', {
-                        'class': 'filmName playfairDisplay'
-                    });
-                    text.html(imagenes[counterLoadedImgs].name);
-
-                    contenedor.prepend(text);
-
-                    fila.append(contenedor);
-        
-                    counterLoadedImgs++;
-                }
+            cantFilas = imagenes.length / cantImgsXFila;
+            if(!Number.isInteger(cantFilas)){
+                cantFilas = Math.floor(cantFilas + 1);
+                console.log("Cantidad filas: ", cantFilas);
             }
-            div_type.append(fila);
+    
+            for(i = 0; i < cantFilas; i++){
+    
+               fila = $('<div>', {
+                   'class': 'row row_films'
+               });
+        
+                for(k = 0; k < cantImgsXFila ; k++){
+                    console.log("Counter: ", counterLoadedImgs);
+        
+                    if(imagenes[counterLoadedImgs]){
+                    
+                        // contenedor
+                        contenedor = $('<div>', {
+                            'class': 'contenedor_peliculas'
+                        });                    
+        
+                        // a
+                        aElement = $('<a>', {
+                            'href': '/peliculas/filmData/' + imagenes[counterLoadedImgs].id
+                        });
+    
+                        // img
+                        img = $('<img>', {
+                            'class':'img-peliculas rounded',
+                            'title': imagenes[counterLoadedImgs].name,
+                            'alt': imagenes[counterLoadedImgs].id,
+                            'src': '/img/' + imagenes[counterLoadedImgs].imgFile //,
+                            //'onclick': '/peliculas/showFilmData/' + imagenes[counterLoadedImgs].id
+                        });
+        
+                        aElement.append(img);
+                        contenedor.append(aElement);
+    
+                        // text
+                        text = $('<h4>', {
+                            'class': 'filmName playfairDisplay'
+                        });
+                        text.html(imagenes[counterLoadedImgs].name);
+    
+                        contenedor.prepend(text);
+    
+                        fila.append(contenedor);
+            
+                        counterLoadedImgs++;
+                    }
+                }
+                div_type.append(fila);
+            }
+            $('#div_films').append(div_type);
+            document.getElementById('div_films').innerHTML += '<hr class="hr">';
         }
-        $('#div_films').append(div_type);
-        document.getElementById('div_films').innerHTML += '<hr class="hr">';
+        
     }
     peticiones(cargando, 'peliculas/imagenes', 'POST', {type}, success);
 }
