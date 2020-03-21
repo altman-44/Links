@@ -2,6 +2,12 @@
 .amatic{
     font-family: 'Amatic SC', cursive;
 }
+.playfairDisplay{
+    font-family: 'Playfair Display', serif;
+}
+.teko{
+    font-family: 'Teko', sans-serif;
+}
 /* ELEMENTS */
 .hr{
     width: 85%;

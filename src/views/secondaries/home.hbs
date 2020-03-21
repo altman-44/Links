@@ -5,6 +5,7 @@
         background: #0f0c29;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color:white;
     }
     /*#16a085*/
     .img-peliculas{
@@ -33,48 +34,18 @@
     }
 </style>
 
-<form action="/allFilms" method="get">
-    
-</form>
-
 <button id="btnAceptar">
     Aceptar
 </button>
 
+<div class="container p-4">
+    <h1>Welcome {{fullname}}</h1>
+</div>
+
 <div class="container">
     <div class="col">
         <div id="div_films">
-            {{!--
-            <div id="div_trending">
-                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0);margin-top:1%;">
-                    <h3>En tendencia</h3>
-                </div>
-            </div>
-            <hr class="hr">
-            <div id="div_popular">
-                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                    <h3>Más populares</h3>
-                </div>
-            </div>
-            <hr class="hr">
-            <div id="div_comedy">
-                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                    <h3>Comedia</h3>
-                </div>
-            </div>
-            <hr class="hr">
-            <div id="div_action">
-                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                    <h3>Acción</h3>
-                </div>
-            </div>
-            <hr class="hr">
-            <div id="div_suspense">
-                <div class="container text-white" style="background-color:rgba(0, 0, 255, 0;margin-top:1%;">
-                    <h3>Suspenso</h3>
-                </div>
-            </div>
-            --}}
+            {{!-- ACA VAN LAS IMAGENES DE LAS PELICULAS --}}
         </div>
     </div>
 </div>
