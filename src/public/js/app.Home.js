@@ -11,7 +11,8 @@ $(function() {
     crearContenedoresPeliculas('action', 'Acción');
     crearContenedoresPeliculas('suspense', 'Suspenso');
     crearContenedoresPeliculas('drama', 'Drama');
-
+    crearContenedoresPeliculas('fantasy', 'Fantasía');
+    crearContenedoresPeliculas('science fiction', 'Ciencia ficción');
 
     $('.flecha').on('click', function(){
         alert("Flecha");
@@ -28,17 +29,9 @@ $(function() {
 function crearContenedoresPeliculas(type, title){
     //Variables
     let imagenes, cantFilas, cantImgsXFila = 3;
-    let fila, contenedor, input, text, flechaLeft, flechaRight, counterLoadedImgs =  0;
+    let fila, contenedor, input, text, aElement, counterLoadedImgs =  0;
 
     //Settings of div_type
-    /*
-    let div_type = document.createElement('div');
-    div_type.setAttribute('id', 'div_' + type);
-    div_type.setAttribute('class', 'container text-white');
-    div_type.setAttribute('style', 'background-color:rgba(0, 0, 255, 0);margin-top:1%;');
-    div_type.innerHTML = '<h1 class="amatic" style="margin-bottom: 60px;">' + title + '</h1>';
-    */
-
     let div_type = $('<div>', {
         'id': 'div_' + type,
         'class': 'container text-white',
@@ -71,18 +64,36 @@ function crearContenedoresPeliculas(type, title){
     
                 if(imagenes[counterLoadedImgs]){
                 
+                    // contenedor
                     contenedor = $('<div>', {
                         'class': 'contenedor_peliculas'
                     });                    
     
+                    // a
+                    aElement = $('<a>', {
+                        'href': '/peliculas/filmData/' + imagenes[counterLoadedImgs].id
+                    });
+
+                    // img
                     img = $('<img>', {
                         'class':'img-peliculas rounded',
+                        'title': imagenes[counterLoadedImgs].name,
                         'alt': imagenes[counterLoadedImgs].id,
-                        'src': '/img/' + imagenes[counterLoadedImgs].imgFile,
-                        'onclick': 'selectedImg(' + imagenes[counterLoadedImgs].id + ')'
+                        'src': '/img/' + imagenes[counterLoadedImgs].imgFile //,
+                        //'onclick': '/peliculas/showFilmData/' + imagenes[counterLoadedImgs].id
                     });
     
-                    contenedor.append(img);
+                    aElement.append(img);
+                    contenedor.append(aElement);
+
+                    // text
+                    text = $('<h4>', {
+                        'class': 'filmName playfairDisplay'
+                    });
+                    text.html(imagenes[counterLoadedImgs].name);
+
+                    contenedor.prepend(text);
+
                     fila.append(contenedor);
         
                     counterLoadedImgs++;
@@ -90,23 +101,9 @@ function crearContenedoresPeliculas(type, title){
             }
             div_type.append(fila);
         }
-    
         $('#div_films').append(div_type);
         document.getElementById('div_films').innerHTML += '<hr class="hr">';
     }
     peticiones(cargando, 'peliculas/imagenes', 'POST', {type}, success);
 }
 
-function selectedImg(valor) {
-    alert(valor);
-}
-
-async function peticiones(beforeSend, url, method, data, success){
-    await $.ajax({
-        beforeSend,
-        url,
-        method,
-        data,
-        success
-    });
-}

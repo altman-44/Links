@@ -22,21 +22,19 @@ router.get('/home', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-    console.log(req.body);
     let user_exists = false;
     let index;
 
     for(i = 0; i < session.users.length; i++){
         console.log(session.users[i]);
         if(req.body.username == session.users[i].username && req.body.pwd == session.users[i].pwd){
-            console.log("existe");
             session.username = req.body.username;
             user_exists = true;
-            index = i;
+            session.index = i;
         }
     }
     if (user_exists){
-        res.render('secondaries/home', {fullname: session.users[index].fullname, mostrarHeader: true});
+        res.render('secondaries/home', {fullname: session.users[session.index].fullname, mostrarHeader: true});
     }else{
         res.render('secondaries/login', {userNoExist: true});
     }
