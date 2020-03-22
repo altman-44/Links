@@ -15,6 +15,8 @@ $(function() {
     crearContenedoresPeliculas('science fiction', 'Ciencia ficción');
     crearContenedoresPeliculas('superheroes', 'Superhéroes');
     crearContenedoresPeliculas('exciting', 'Emocionantes');
+    crearContenedoresPeliculas('adventure', 'Aventura');
+    crearContenedoresPeliculas('children', 'Infantiles');
 
     $('.flecha').on('click', function(){
         alert("Flecha");
@@ -80,7 +82,6 @@ function crearContenedoresPeliculas(type, title){
                         // img
                         img = $('<img>', {
                             'class':'img-peliculas rounded',
-                            'title': imagenes[counterLoadedImgs].name,
                             'alt': imagenes[counterLoadedImgs].id,
                             'src': '/img/' + imagenes[counterLoadedImgs].imgFile //,
                             //'onclick': '/peliculas/showFilmData/' + imagenes[counterLoadedImgs].id

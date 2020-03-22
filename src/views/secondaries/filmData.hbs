@@ -1,63 +1,110 @@
 <style>
-    body{
-        background: #FFEFBA;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    body {
+        background: #FFEFBA;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
-    .card{
-        background: #8E0E00;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    .card {
+        background: #8E0E00;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #1F1C18, #8E0E00);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
-    .card-header{
-        background: #FFEFBA;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    .card-header {
+        background: #FFEFBA;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
-    #textDescription{
+
+    #textDescription {
         text-decoration: underline;
     }
-    .card-footer a{
+
+    .card-footer {
+        overflow: hidden;
+    }
+    .card-footer a {
         left: 900px;
+    }
+    .flecha{
+        font-size: 6em;
+        cursor: pointer;
     }
 </style>
 <div class="container p-4">
-    <div class="card p-4">
-        <div class="card-header border border-primary mb-3">
-            {{#if film.iconSrc.web}}
-               <img style="float:left" src="{{film.iconSrc.src}}"/>
-            {{/if}}
-            {{#if film.iconSrc.class}}
-               <img style="float:left" src="{{film.iconSrc.src}}"/>
-            {{/if}}
-            <h1 class="card-title text-danger">{{film.name}}</h1>
+    <div class="row">
+        <div class="col text-right align-self-center">
+            <i class="fas fa-angle-left flecha text-danger"></i>
         </div>
-        <div class="text-center">
-            <img class="card-img rounded border border-danger" id="imgFilm" title="{{film.name}}" src="/img/{{film.imgFile}}">
-        </div>
-        <div class="card-body text-white border border-info mt-3 mb-3">
-            <div class="card-text">
-                <p>Estreno: <span class="text-info">{{film.dateRelease}}</span></p>
-                <p class="mr-3">Género: 
-                    <span class="text-info mr-1">
-                        {{#each generos}}
-                            {{this}}
-                        {{/each}}
-                    </span>
-                </p>
-                <p>Director: <span class="text-info">{{film.director}}</span></p>
-                <p>Duración: <span class="text-info">{{film.duration}}</span></p>
-                <p class="text-white border border-white p-2 border-left-0 border-right-0"><span id="textDescription">Descripción</span><br> <span class="text-justify">{{film.description}}</span></p>
-                <p><i class="fas fa-award"></i> Premios: <span class="text-info">
-                    {{#each film.awards}}
-                        {{this}}
-                    {{/each}}
-                </span></p>
+        <div class="col-10">
+            <div class="card p-4">
+                <div class="card-header border border-primary mb-3">
+                    {{#if film.iconSrc.web}}
+                    <img style="float:left" src="{{film.iconSrc.src}}" />
+                    {{/if}}
+                    {{#if film.iconSrc.file}}
+                    <img style="float:left;width:50px;height:50px" src="/img/Icons/{{film.iconSrc.src}}">
+                    {{/if}}
+                    {{#if film.iconSrc.class}}
+                    <i class="{{film.iconSrc.src}}"></i>
+                    {{/if}}
+                    <h1 class="card-title text-primary">{{film.name}}</h1>
+                </div>
+                <div class="text-center">
+                    <img class="card-img rounded border border-success" id="imgFilm" title="{{film.name}}"
+                        src="/img/{{film.imgFile}}">
+                </div>
+                <div class="card-body text-white border border-info mt-3 mb-3">
+                    <div class="card-text">
+                        <p>Estreno: <span class="text-info">{{film.dateRelease}}</span></p>
+                        <p class="mr-3">Género:
+                            <span class="text-info mr-1">
+                                {{#each generos}}
+                                {{this}}
+                                {{/each}}
+                            </span>
+                        </p>
+                        <p>Director: <span class="text-info">{{film.director}}</span></p>
+                        <p>Duración: <span class="text-info">{{film.duration}}</span></p>
+                        <p class="mr-3">Protagonistas:
+                            <span class="text-info mr-1">
+                                {{#each protagonistas}}
+                                {{this}}
+                                {{/each}}
+                            </span>
+                        </p>
+                        <p class="text-white border border-white p-2 border-left-0 border-right-0"><span
+                                id="textPlot">Argumento</span><br> <span class="text-justify">{{film.plot}}</span></p>
+                        <p><i class="fas fa-award"></i> Premios:
+                            <span class="text-info">
+                                {{#each premios}}
+                                {{this}}
+                                {{/each}}.
+                            </span></p>
+                    </div>
+                </div>
+                <div class="card-footer border border-danger border-top-0 border-bottom-0 border-right-0">
+                    {{#if film.urlNetflix.existe}}
+                    <a href="{{film.urlNetflix.url}}" class="text-danger" target="_blank"
+                        style="position:relative;left: 200%;display:block;"><strong>Netflix</strong></a>
+                    {{/if}}
+                    <a href="{{film.urlYoutube.url}}" class="text-white" target="_blank"
+                        style="position:relative;left: 200%;display:block;"><strong>Youtube (Trailer)</strong></a>
+                </div>
             </div>
         </div>
-        <div class="card-footer border border-danger border-top-0 border-bottom-0 border-right-0">
-            <a id="aCardFooter_1" href="{{film.urlNetflix}}" class="text-danger" target="_blank" style="position:relative;left: 1200px;display:block;opacity:0;"><strong>Netflix</strong></a>
-            <a id="aCardFooter_2" href="{{film.urlYoutube}}" class="text-white" target="_blank" style="position:relative;left: 1200px;display:block;opacity:0;"><strong>Youtube (Trailer)</strong></a>
+        <div class="col text-left align-self-center">
+            <i class="fas fa-angle-right flecha text-danger"></i>
         </div>
     </div>
 </div>

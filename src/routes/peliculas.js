@@ -36,15 +36,25 @@ router.get('/filmData/:id', (req, res) => {
 
 router.get('/filmData', (req, res) => {
     console.log(session.imagen);
-    let generos = [];
-    session.imagen.genre.forEach( (generoAux, i) => {
-        if(i < (session.imagen.genre.length - 1)){
-            generos[generos.length] = generoAux.toUpperCase() + ' |';
-        } else{
-            generos[generos.length] = generoAux.toUpperCase();
-        }
-    })
-    res.render('secondaries/filmData', {mostrarHeader: true, film: session.imagen, generos})
+
+    let generos = ponerBarraAlCostado(session.imagen.genre);
+    let protagonistas = ponerBarraAlCostado(session.imagen.protagonists);
+    let premios = ponerBarraAlCostado(session.imagen.awards);
+
+    res.render('secondaries/filmData', {mostrarHeaderCompleto: true, film: session.imagen, generos, protagonistas, premios})
 });
+
+function ponerBarraAlCostado(vector){
+    let vectorAux = [];
+    vector.forEach( (elemento, i) => {
+        if(i < vector.length - 1){
+            vectorAux.push(elemento + ' |');
+        } else {
+            vectorAux.push(elemento);
+        }
+    });
+
+    return vectorAux;
+}
 
 module.exports = router;
