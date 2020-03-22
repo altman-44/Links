@@ -41,6 +41,9 @@
 {{#if userNoExist}}
     <div class="alert alert-danger">
         The required user does not exist
+        <button type="button" class="close" aria-label="Close" onclick="closeAlert()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 {{/if}}
 <div class="d-flex justify-content-center container mt-5 text-white" style=" text-aling:center; background-color:#34495e; transform:translate(-50%, -50%) width:200px;border-style:double;border-width: 5px;">

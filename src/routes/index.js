@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/home', (req, res) => {
-    res.render('secondaries/home', {mostrarHeader: true});
+    res.render('secondaries/home', {mostrarHeaderCompleto: true});
 })
 
 router.post('/login', (req, res) => {
@@ -34,7 +34,7 @@ router.post('/login', (req, res) => {
         }
     }
     if (user_exists){
-        res.render('secondaries/home', {fullname: session.users[session.index].fullname, mostrarHeader: true});
+        res.render('secondaries/home', {fullname: session.users[session.index].fullname, mostrarHeaderCompleto: true});
     }else{
         res.render('secondaries/login', {userNoExist: true});
     }
