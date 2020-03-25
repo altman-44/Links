@@ -21,7 +21,7 @@ Será una página en la que los usuarios podrán elegir qué cosas les gustan (p
 
 &nbsp;
 
-## Gracias a ...
+<p>Gracias a ...</p>
 
 * [uiGradients](https://uigradients.com)
 
