@@ -17,3 +17,5 @@ Será una página en la que los usuarios podrán guardar sus películas favorita
 ####H4 header
 #####H5 header
 ######H6 header
+
+"npm install express express-handlebars body-parser"
