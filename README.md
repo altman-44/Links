@@ -16,4 +16,5 @@ Será una página en la que los usuarios podrán elegir qué cosas les gustan (p
 #### Motor de Plantillas
 * Handlebars
 
-[ cita
+[
+cita hecha por el autor. hkeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
