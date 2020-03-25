@@ -19,8 +19,8 @@ Será una página en la que los usuarios podrán elegir qué cosas les gustan (p
 * Handlebars
 
 
-
 &nbsp;
-Gracias a...
+
+## Gracias a ...
 
 * [uiGradients](https://uigradients.com)
