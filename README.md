@@ -3,10 +3,10 @@ Será una página en la que los usuarios podrán guardar sus películas favorita
 
 ## Used Technologies
 
-### FrontEnd
+###FrontEnd
   HTML
   CSS
   JS
 
-### BackEnd
+###BackEnd
   NodeJS
