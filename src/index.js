@@ -23,7 +23,9 @@ app.use(express.json());
 
 //Routes
 app.use(require('./routes'));
+app.use('/pages', require('./routes/pages.js'));
 app.use('/peliculas', require('./routes/peliculas.js'));
+
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));

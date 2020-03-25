@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const session = require('express-session');
-const path = require('path');
 
 const app = express();
 
-session.users = require('../database/trucha');
+session.users = require('../database/users');
 
 app.use(session({
     secret: "123",
@@ -14,12 +13,21 @@ app.use(session({
 }));
 
 router.get('/', (req, res) => {
-    res.render('secondaries/login');
+    res.render('secondaries/login', {ocultarOpcionesHeader: true});
 });
 
 router.get('/home', (req, res) => {
-    res.render('secondaries/home', {mostrarHeaderCompleto: true});
+    res.render('secondaries/home');
+});
+
+router.get('/films', (req, res) => {
+    res.render('secondaries/films');
 })
+
+router.get('/:page', (req, res) => {
+    console.log(req.params);
+    res.render('secondaries/home');
+});
 
 router.post('/login', (req, res) => {
     let user_exists = false;
@@ -34,14 +42,10 @@ router.post('/login', (req, res) => {
         }
     }
     if (user_exists){
-        res.render('secondaries/home', {fullname: session.users[session.index].fullname, mostrarHeaderCompleto: true});
+        res.render('secondaries/home', {fullname: session.users[session.index].fullname});
     }else{
         res.render('secondaries/login', {userNoExist: true});
     }
-});
-
-router.get('/prueba', (req, res) => {
-    res.send('hola');
 });
 
 module.exports = router;

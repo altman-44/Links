@@ -3,14 +3,14 @@ module.exports = [
         id: 1,
         username: "admin",
         pwd: "admin",
-        fullname: "admin admin",
-        film: "Batman"
+        fullname: "Admin C",
+        film: []
     },
     {
         id: 2,
         username: "admin2",
         pwd: "admin",
-        fullname: "admin2 admin2",
-        film: "Wason"
+        fullname: "Admin A",
+        film: []
     }
 ];

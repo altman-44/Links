@@ -22,12 +22,6 @@ $(function() {
         alert("Flecha");
     });
 
-    $('#btnAceptar').click(function(){
-        let success = function(info){
-            alert(info);
-        }
-        peticiones(null, 'prueba', 'GET', null, success);
-    });
 });
 
 function crearContenedoresPeliculas(type, title){
@@ -50,7 +44,7 @@ function crearContenedoresPeliculas(type, title){
         $("#spinner").spin('hide');
         imagenes = info;
 
-        if(imagenes.length > 0){
+        if(imagenes.length >= 3){ //si hay 3 o más películas de ese género se van a mostrar (sino no)
 
             cantFilas = imagenes.length / cantImgsXFila;
             if(!Number.isInteger(cantFilas)){
@@ -61,7 +55,7 @@ function crearContenedoresPeliculas(type, title){
             for(i = 0; i < cantFilas; i++){
     
                fila = $('<div>', {
-                   'class': 'row row_films'
+                   'class': 'row row_container'
                });
         
                 for(k = 0; k < cantImgsXFila ; k++){

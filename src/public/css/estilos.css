@@ -23,7 +23,7 @@
 .flecha:hover{
     cursor: pointer;
 }
-.row_films{
+.row_container{
     margin-top: 10px;
     margin-bottom: 10px;
     border-style: solid;
