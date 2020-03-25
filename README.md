@@ -23,4 +23,4 @@ Será una página en la que los usuarios podrán elegir qué cosas les gustan (p
 
 ## Gracias a ...
 
-* [uiGradients](blank:#https://uigradients.com)
+* [uiGradients](https://uigradients.com/?target=_blank)
