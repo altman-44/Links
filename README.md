@@ -1,5 +1,5 @@
 # Links
-Será una página en la que los usuarios podrán guardar sus películas favoritas y demás funciones de almacenamiento
+Será una página en la que los usuarios podrán elegir qué cosas les gustan (películas, series, libros, música, lugares para ir a comer/viajar/etc, aplicaciones, etc). De esta manera, el perfil del usuario irá almacenando estos datos para luego conectarlo con otros usuarios a los que les gustaron cosas similares.
 
 ## Used Technologies
 
@@ -11,7 +11,7 @@ Será una página en la que los usuarios podrán guardar sus películas favorita
 ### BackEnd
 * NodeJS
 
-  npm install express express-handlebars body-parser
+e "npm install express express-handlebars body-parser".
 
 #### Motor de Plantillas
 * Handlebars
