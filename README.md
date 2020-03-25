@@ -11,7 +11,8 @@ Será una página en la que los usuarios podrán elegir qué cosas les gustan (p
 ### BackEnd
 * NodeJS
 
-`npm install express express-handlebars body-parser`
+#### Frameworks
+* `npm install express express-handlebars body-parser`
 
 #### Motor de Plantillas
 * Handlebars
