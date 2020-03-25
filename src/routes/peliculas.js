@@ -35,13 +35,12 @@ router.get('/filmData/:id', (req, res) => {
 });
 
 router.get('/filmData', (req, res) => {
-    console.log(session.imagen);
 
     let generos = ponerBarraAlCostado(session.imagen.genre);
     let protagonistas = ponerBarraAlCostado(session.imagen.protagonists);
     let premios = ponerBarraAlCostado(session.imagen.awards);
 
-    res.render('secondaries/filmData', {mostrarHeaderCompleto: true, film: session.imagen, generos, protagonistas, premios})
+    res.render('secondaries/filmData', {film: session.imagen, generos, protagonistas, premios})
 });
 
 function ponerBarraAlCostado(vector){
