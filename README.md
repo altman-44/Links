@@ -20,4 +20,5 @@ Será una página en la que los usuarios podrán elegir qué cosas les gustan (p
 
 
 Gracias a...
-[uiGradients] (https://uigradients.com/#ViceCity)
+
+#### [uiGradients](https://uigradients.com)
