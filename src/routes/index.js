@@ -25,13 +25,11 @@ router.get('/films', (req, res) => {
 })
 
 router.get('/:page', (req, res) => {
-    console.log(req.params);
     res.render('secondaries/home');
 });
 
 router.post('/login', (req, res) => {
     let user_exists = false;
-    let index;
 
     for(i = 0; i < session.users.length; i++){
         console.log(session.users[i]);
