@@ -18,14 +18,13 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 //Middlewares
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //Routes
 app.use(require('./routes'));
 app.use('/pages', require('./routes/pages.js'));
 app.use('/peliculas', require('./routes/peliculas.js'));
-
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
