@@ -75,7 +75,7 @@ function crearContenedoresPeliculas(type, title){
     
                         // img
                         img = $('<img>', {
-                            'class':'img-peliculas rounded',
+                            'class':'img-peliculas',
                             'alt': imagenes[counterLoadedImgs].id,
                             'src': '/img/' + imagenes[counterLoadedImgs].imgFile //,
                             //'onclick': '/peliculas/showFilmData/' + imagenes[counterLoadedImgs].id
