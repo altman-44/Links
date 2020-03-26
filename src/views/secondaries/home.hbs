@@ -1,18 +1,116 @@
 <style>
     body{
-        background: #224e42;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #99f2c8, #224e42);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #99f2c8, #224e42); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-color:rgb(51, 45, 92);
+        /*linear-gradient(to bottom, #2c458c, #061837);*/
+        color: white;
     }
-</style>
-<h1>Este va a ser el home</h1>
-<h2>En proceso</h2>
+    .presentacion_info{
+     height: 530px; 
+     border: 2px solid rgb(255, 255, 255)9); 
+     background: #051b2e;
+     -webkit-transform: skew(150deg);
+     -moz-transform: skew(13deg);
+     -ms-transform: skew(13deg);
+     -o-transform: skew(13deg);
+     transform: skew(13deg);
+    }
+    #contenedor_general{
+     background-color: rgba(255, 166, 0, 0);
+     width: 100%;
+     height:100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+    }
+    .categoria{
+        display: inline-block;
+        margin-right:40px;
+    }
+    .margen{
+        margin-left: 160px;
+        min-width: auto;
+    }
 
-<div class="container p-4">
+$itemGrow: 1.2;
+$duration: 250ms;
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2,100%);
+  overflow:hidden;
+  scroll-behavior: smooth;
+
+  section {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    margin: 20px 0;
+    
+    .item {
+      padding: 0 2px;
+      transition: $duration all;
+      
+      &:hover { 
+        margin: 0 40px;
+        transform: scale(1.2);
+      }
+      
+    } 
+  }
+}
+
+</style>
+
+<div class="container p-4" style="margin-top: 20px;">
     <h1>Welcome {{fullname}}</h1>
 </div>
 
 <form action="/pages" method="POST">
-    <button name="page" value="films">Ir a Films</button>
+    <div id="contenedor_general">
+
+        <div class="wrapper">
+
+            <section id="section1">
+                <a href="#section3">‹</a>
+                
+                    <div class="categoria_peliculas categoria margen">
+                        <button name="page" value="films" class="presentacion_info">Ir a Films</button>
+                    </div>
+                    <div class="categoria_musica categoria">
+                        <button name="page" value="" class="presentacion_info">Login</button>
+                    </div>
+                    <div class="categoria_juegos categoria">
+                        <button name="page" value="" class="presentacion_info">Ir a Films</button>
+                    </div>
+                    <div class="categoria_libros categoria">
+                        <button name="page" value="" class="presentacion_info">Ir a Films</button>
+                    </div>
+
+                <a href="#section2">›</a>
+            </section>
+            
+            <section id="section2">
+                <a href="#section1">‹</a>
+                    <div class="categoria_peliculas categoria margen">
+                        <button name="page" value="films" class="presentacion_info">Ir a Films</button>
+                    </div>
+                    <div class="categoria_musica categoria">
+                        <button name="page" value="" class="presentacion_info">Login</button>
+                    </div>
+            </section>
+        </div>
+    </div>
+        
+    
 </form>
 
